@@ -1,0 +1,84 @@
+﻿@* @model IEnumerable<LinQwithJoin.Models.SchoolStudent> *@
+    @model dynamic;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Person Id
+                @* @Html.DisplayNameFor(model => model.SchoolName) *@
+            </th>
+            <th>
+                Person Name
+                @* @Html.DisplayNameFor(model => model.StudentMark) *@
+            </th>
+            <th>
+                Person Gender
+                @* @Html.DisplayNameFor(model => model.Student) *@
+            </th>
+            <th>
+                Person Age
+                @* @Html.DisplayNameFor(model => model.StudentMark) *@
+            </th>
+            <th>
+                Person City
+                @* @Html.DisplayNameFor(model => model.Student) *@
+            </th>
+            <th>
+                School Name
+                @* @Html.DisplayNameFor(model => model.StudentMark) *@
+            </th>
+            <th>
+                Student Marks
+                @* @Html.DisplayNameFor(model => model.Student) *@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @item.personId
+                @* @Html.DisplayFor(modelItem => item.SchoolName) *@
+            </td>
+            <td>
+                    @item.personName
+                @* @Html.DisplayFor(modelItem => item.StudentMark) *@
+            </td>
+            <td>
+                    @item.personGender
+                @* @Html.DisplayFor(modelItem => item.Student.PersonId) *@
+            </td>
+                <td>
+                    @item.personAge
+                    @* @Html.DisplayFor(modelItem => item.StudentMark) *@
+                </td>
+                <td>
+                    @item.personCity
+                    @* @Html.DisplayFor(modelItem => item.Student.PersonId) *@
+                </td>
+                <td>
+                    @item.schoolName
+                    @* @Html.DisplayFor(modelItem => item.StudentMark) *@
+                </td>
+                <td>
+                    @item.studentMarks
+                    @* @Html.DisplayFor(modelItem => item.Student.PersonId) *@
+                </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RollNumber">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RollNumber">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RollNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
